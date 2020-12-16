@@ -4,7 +4,7 @@
 
 // Dependencies
 // =============================================================
-var coffeeDrink = require("../models/caffeinParadise.js");
+var coffeeDrink = require("../../models/caffeinParadise.js");
 
 // Routes
 // =============================================================
