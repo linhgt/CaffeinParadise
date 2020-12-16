@@ -13,7 +13,7 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 
 // Requiring our models for syncing
-//var db = require("./models");
+var db = require("./app/models");
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -27,8 +27,8 @@ app.set("view engine", "handlebars");
 
 // Routes
 // =============================================================
-require("./app/routes/api-routes.js")(app);
-require("./app/routes/html-routes.js")(app);
+require("./app/public/routes/api-routes.js")(app);
+require("./app/public/routes/html-routes.js")(app);
 
 // Starts the server to begin listening
 // =============================================================
