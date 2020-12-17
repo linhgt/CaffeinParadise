@@ -1,49 +1,124 @@
 <div class="container">
-
     <div>
-        <h1>Eat-Da-Burger!</h1>
+        <h2>Hot Coffee Drinks</h2>
+
     </div>
 
-    <div class="row burgers">
-        <div class="col-1"></div>
-        <div class="col-5 orderBackground">
-            <h2>Your Orders Here!</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {{#each drinks}}
+        <div class="col">
+            <div class="card h-100">
+                <img src={{img_url}} class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <p class="card-text">short explianation of product</p>
 
-            <ul>
-                {{#each burgers}}
-                {{#unless devoured}}
-                {{!-- {{> burgers/burger-block devoured=false}} --}}
-                <h3>{{burger_name}}<span><button id="{{id}}"
-                            class="btn btn-success devour-btn">Devour</button></span><span><button id="{{id}}"
-                            class="btn btn-info delete-btn">Delete</button></span></h3>
-                {{/unless}}
-                {{/each}}
-            </ul>
-        </div>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option selected>small - ${{price_sm}}</option>
+                        <option value="medium">medium - ${{price_md}}</option>
+                        <option value="large">large - ${{price_lg}}</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Order</button>
 
-        <div class="col-1"></div>
 
-        <div class="col-5 devouredBackground ">
-            <h2>Devoured Burgers</h2>
-            <ul>
-                {{#each burgers}}
-                {{#if devoured}}
-                {{!-- {{> burgers/burger-block devoured=true}} --}}
-                <h3 burgerText>{{burger_name}}<span><button id="{{id}}"
-                            class="btn btn-success undevour-btn">Undevour</button></span><span></span><button
-                        id="{{id}}" class="btn btn-info delete-btn">Delete</button></span>
-                </h3>
-                {{/if}}
-                {{/each}}
-            </ul>
-        </div>
-        <div class="col-1"></div>
-    </div>
-    <div>
-        <form class="create-form mt-5">
-            <div class="form-group">
-                <textarea type="text" id="burger" name="name" placeholder="Burger Name"></textarea>
+
+                </div>
             </div>
-            <button type="submit" class="form-button btn-danger">Add Burger</button>
-        </form>
+        </div>
+        {{/each}}
+        {{!-- <div class="col">
+            <div class="card h-100">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">coffee2</h5>
+                    <p class="card-text">short explianation of product</p>
+
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option selected>small</option>
+                        <option value="medium">medium</option>
+                        <option value="large">large</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Order</button>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">coffee3</h5>
+                    <p class="card-text">short explianation of product</p>
+
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option selected>small</option>
+                        <option value="medium">medium</option>
+                        <option value="large">large</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Order</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">coffee4</h5>
+                    <p class="card-text">short explianation of product</p>
+
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option selected>small</option>
+                        <option value="medium">medium</option>
+                        <option value="large">large</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Order</button>
+
+
+                </div>
+            </div>
+        </div> --}}
     </div>
+
+    <div>
+        <h2>Your Orders Here!</h2>
+
+        <ul>
+            {{!-- {{#each }}
+            {{#unless }}
+            <h3>{{name}}<span>
+                    <h3><button id="{{id}}" class="btn btn-info delete-btn">Delete</button>
+                </span></h3>
+            {{/unless}}
+            {{/each}} --}}
+        </ul>
+
+        <button type="submit" class="btn btn-primary">Place Order</button>
+    </div>
+
+</div>
