@@ -1,51 +1,77 @@
-const express = require("express");
-const router = express.Router();
-// Import the model (burger_models.js) to use its database functions
-const burger = require("../models/burger_models.js");
+var express = require("express");
 
-router.get("/", function (req, res) {
-  burger.selectAll(function (data) {
-    console.log(data);
-    res.render("index", { burgers: data });
+var router = express.Router();
+
+// Import the model to use its database functions.
+const db = require("../models");
+
+router.get("/", (req, res) => {
+  db.CoffeeDrinks.findAll({ raw: true }).then(function (results) {
+    console.log(results);
+    res.render("index", { drinks: results });
+  });
+});
+//our routes and set up logic within those routes where required.
+router.get("/api/all", function (req, res) {
+  db.CoffeeDrinks.findAll({}).then(function (results) {
+    res.json(results);
   });
 });
 
-router.post("/api/burgers", (req, res) => {
-  console.log("New burger POST request: ", req.body);
-  // Column names
-  burger.insertOne(req.body.burger_name, (result) => {
-    // Send back the ID of the new burger / function(result){}
-    res.json({ id: result.insertId });
-  });
-});
-router.put("/api/burgers/:id", (req, res) => {
-  // console.log("UPDATE burger WHERE condition: ", condition);
-
-  burger.updateOne(req.body.devoured, req.params.id, (result) => {
-    if (result.changedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
+router.get("/api/CoffeeDrinks/:name", function (req, res) {
+  db.CoffeeDrinks.findAll({
+    where: {
+      name: req.params.name,
+    },
+  }).then(function (results) {
+    res.json(results);
   });
 });
 
-router.delete("/api/burgers/:id", (req, res) => {
-  burger.deleteOne(req.params.id, (result) => {
-    if (result.affectedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
+//
+router.get("/api/CoffeeDrinks/:size", function (req, res) {
+  db.CoffeeDrinks.findAll({
+    where: {
+      HotCoffeeDrinks: req.params.size,
+    },
+  }).then(function (results) {
+    res.json(results);
   });
 });
 
-// Redirect to root if no routes match
-router.get("*", (req, res) => {
-  res.redirect("/");
+router.get("/api/CoffeeDrinks/:price", function (req, res) {
+  db.CoffeeDrinks.findAll({
+    where: {
+      HotCoffeeDrinks: req.params.price,
+    },
+  }).then(function (results) {
+    res.json(results);
+  });
 });
 
+// If a user sends data to add a new character...
+router.post("/api/new", function (req, res) {
+  console.log("CoffeeDrinks Data:");
+  console.log(req.body);
+  db.CoffeeDrinks.create({
+    name: req.body.name,
+    size: req.body.size,
+    price: req.body.price,
+  }).then(function (results) {
+    res.json(results);
+  });
+
+  router.delete("/api/CoffeeDrinks/:id", function (req, res) {
+    console.log("CoffeeDrinks ID:");
+    console.log(req.params.id);
+    db.CoffeeDrinks.destroy({
+      where: {
+        id: req.params.id,
+      },
+    }).then(function () {
+      res.end();
+    });
+  });
+});
 // Export routes for server.js to use.
 module.exports = router;
