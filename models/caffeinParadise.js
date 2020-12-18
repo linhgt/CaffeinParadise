@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     img_url: DataTypes.STRING,
+    short_description: DataTypes.STRING,
     price_sm: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
