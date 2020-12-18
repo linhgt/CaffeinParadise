@@ -12,7 +12,7 @@ var exphbs = require("express-handlebars");
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -34,7 +34,7 @@ app.set("view engine", "handlebars");
 // Routes
 // =============================================================
 // Import routes and give the server access to them.
-var routes = require("./routes/caffeinController.js");
+var routes = require("./controller/caffeinController.js");
 
 app.use(routes);
 
