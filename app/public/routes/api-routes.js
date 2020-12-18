@@ -9,7 +9,6 @@ var coffeeDrink = require("../../models/caffeinParadise.js");
 // Routes
 // =============================================================
 module.exports = function (app) {
-  
   app.get("/api/all", function (req, res) {
     coffeeDrinks.findAll({}).then(function (results) {
       res.json(results);
@@ -60,10 +59,10 @@ module.exports = function (app) {
     HotCoffeeDrinks.create({
       name: req.body.name,
       size: req.body.size,
-      price: req.body.price,
-    }).then(function(results) {
+      price: req.body.price
+    })}.then(function(results) {
       res.json(results);
-    })
+    }));
      
 
     app.delete("/api/HotCoffeeDrinks/:id", function(req, res) {
@@ -124,3 +123,6 @@ module.exports = function (app) {
       res.json(dbTodo);
     });
   });
+}
+  
+  
