@@ -4,50 +4,123 @@
 
 // Dependencies
 // =============================================================
-var coffeeDrink = require("../models/caffeinParadise.js");
+var coffeeDrinks = require("../models/caffeinParadise.js");
 
 // Routes
 // =============================================================
 module.exports = function (app) {
-  // Search for Specific Character (or all characters) then provides JSON
-  app.get("/api/:coffeDrink?", function (req, res) {
-    if (req.params.characters) {
-      // Display the JSON for ONLY that character.
-      // (Note how we're using the ORM here to run our searches)
-      Character.findOne({
-        where: {
-          routeName: req.params.characters,
-        },
-      }).then(function (result) {
-        return res.json(result);
-      });
-    } else {
-      Character.findAll().then(function (result) {
-        return res.json(result);
-      });
-    }
+  
+  app.get("/api/all", function (req, res) {
+    coffeeDrinks.findAll({}).then(function (results) {
+      res.json(results);
+    });
   });
+
+  app.get("/api/HotCoffeeDrinks/:name", function (req, res) {
+    coffeeDrinks
+      .findAll({
+        where: {
+          HotCoffeeDrinks: req.params.name,
+        },
+      })
+      .then(function (results) {
+        res.json(results);
+      });
+  });
+
+  // 
+  app.get("/api/HotCoffeeDrinks/:size", function (req, res) {
+    coffeeDrinks
+      .findAll({
+        where: {
+          HotCoffeeDrinks: req.params.size,
+        },
+      })
+      .then(function (results) {
+        res.json(results);
+      });
+  });
+    
+    app.get("/api/HotCoffeeDrinks/:price", function (req, res) {
+      coffeeDrinks
+        .findAll({
+          where: {
+            HotCoffeeDrinks: req.params.price,
+          },
+        })
+        .then(function (results) {
+          res.json(results);
+        });
+    });
 
   // If a user sends data to add a new character...
   app.post("/api/new", function (req, res) {
-    // Take the request...
-    var character = req.body;
+   console.log("HotCoffeeDrinks Data:");
+    console.log(req.body);
+    HotCoffeeDrinks.create({
+      name: req.body.name,
+      size: req.body.size,
+      price: req.body.price,
+    }).then(function(results) {
+      res.json(results);
+    })
+     
 
-    // Create a routeName
+    app.delete("/api/HotCoffeeDrinks/:id", function(req, res) {
+    console.log("HotCoffeeDrinks ID:");
+    console.log(req.params.id);
+    HotCoffeeDrinks.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function() {
+      res.end();
+    });
+  });
 
-    // Using a RegEx Pattern to remove spaces from character.name
-    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-    var routeName = character.name.replace(/\s+/g, "").toLowerCase();
 
-    // Then add the character to the database using sequelize
-    Character.create({
-      routeName: routeName,
-      name: character.name,
-      role: character.role,
-      age: character.age,
-      forcePoints: character.forcePoints,
+
+
+    // POST route for saving a new todo
+  app.post("/api/todos", function(req, res) {
+    // create takes an argument of an object describing the item we want to
+    // insert into our table. In this case we just we pass in an object with a text
+    // and complete property
+    db.Todo.create({
+      text: req.body.text,
+      complete: req.body.complete
+    }).then(function(dbTodo) {
+      // We have access to the new todo as an argument inside of the callback function
+      res.json(dbTodo);
+    });
+  });
+
+  // DELETE route for deleting todos. We can get the id of the todo to be deleted from
+  // req.params.id
+  app.delete("/api/todos/:id", function(req, res) {
+    // We just have to specify which todo we want to destroy with "where"
+    db.Todo.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbTodo) {
+      res.json(dbTodo);
     });
 
-    res.status(204).end();
   });
-};
+
+  // PUT route for updating todos. We can get the updated todo data from req.body
+  app.put("/api/todos", function(req, res) {
+    // Update takes in an object describing the properties we want to update, and
+    // we use where to describe which objects we want to update
+    db.Todo.update({
+      text: req.body.text,
+      complete: req.body.complete
+    }, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(dbTodo) {
+      res.json(dbTodo);
+    });
+  });
