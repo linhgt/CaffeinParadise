@@ -1,6 +1,7 @@
 <div class="container">
     <div>
         <h1>Coffee Drinks</h1>
+        <h2>Hot Coffees</h2>
 
     </div>
 
@@ -12,113 +13,37 @@
                 <div class="card-body">
                     <h5 class="card-title">{{name}}</h5>
                     <p class="card-text">short explianation of product</p>
-
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                        <option selected>1</option>
+                    <select class="quantity form-select form-select-sm target" aria-label=".form-select-sm example">
+                        <option value="1" selected>1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                     </select>
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                        <option selected>small - ${{price_sm}}</option>
-                        <option value="medium">medium - ${{price_md}}</option>
-                        <option value="large">large - ${{price_lg}}</option>
+                    <select class="price form-select form-select-sm target" aria-label=".form-select-sm example">
+                        <option value="small-{{price_sm}}" selected>small - ${{price_sm}}</option>
+                        <option value="medium-{{price_md}}">medium - ${{price_md}}</option>
+                        <option value="large-{{price_lg}}">large - ${{price_lg}}</option>
                     </select>
-                    <button type="submit" class="btn btn-primary">Order</button>
-
-
-
+                    <button class="order-btn btn-primary">Order</button>
                 </div>
             </div>
         </div>
         {{/each}}
-        {{!-- <div class="col">
-            <div class="card h-100">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">coffee2</h5>
-                    <p class="card-text">short explianation of product</p>
+        {{!-- <div>
+            <h2>Cold Coffees</h2>
 
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                        <option selected>1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                        <option selected>small</option>
-                        <option value="medium">medium</option>
-                        <option value="large">large</option>
-                    </select>
-                    <button type="submit" class="btn btn-primary">Order</button>
-
-
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">coffee3</h5>
-                    <p class="card-text">short explianation of product</p>
-
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                        <option selected>1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                        <option selected>small</option>
-                        <option value="medium">medium</option>
-                        <option value="large">large</option>
-                    </select>
-                    <button type="submit" class="btn btn-primary">Order</button>
-
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">coffee4</h5>
-                    <p class="card-text">short explianation of product</p>
-
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                        <option selected>1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                        <option selected>small</option>
-                        <option value="medium">medium</option>
-                        <option value="large">large</option>
-                    </select>
-                    <button type="submit" class="btn btn-primary">Order</button>
-
-
-                </div>
-            </div>
         </div> --}}
-    </div>
 
+    </div>
     <div>
         <h2>Your Orders Here!</h2>
 
-        <ul>
-            {{!-- {{#each }}
-            {{#unless }}
-            <h3>{{name}}<span>
-                    <h3><button id="{{id}}" class="btn btn-info delete-btn">Delete</button>
-                </span></h3>
-            {{/unless}}
-            {{/each}} --}}
+        <ul id="cart">
+
         </ul>
+        <hr>
+        <div>Your Total - $<span id="total"></span></div>
 
-        <button type="submit" class="btn btn-primary">Place Order</button>
+        <button type="submit" class="btn btn-primary place-btn">Place Order</button>
     </div>
-
 </div>
