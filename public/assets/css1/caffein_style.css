@@ -1,0 +1,155 @@
+
+body {
+    margin: 40px;
+   
+}
+
+.container {
+    
+
+}
+
+h1 {
+color: #5B2C6F;
+margin-top: 5px;
+margin-top: 10px;
+font-family: 'Franklin Gothic Medium',
+'Arial Narrow',
+Arial,
+sans-serif;
+background-color: lightgoldenrodyellow;
+
+
+}
+
+.col{
+margin-bottom: 20px;
+
+}
+
+.card-img,
+.card-img-bottom,
+.card-img-top {
+height:60%;
+
+}
+
+ul {
+    background-color: lightgoldenrodyellow;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 5px;
+    text-align: center;
+    padding-inline-start: 20px;
+}
+
+h4 {
+text-align: right;
+color:#5D6D7E;
+font-family: 'Franklin Gothic Medium',
+'Arial Narrow',
+Arial,
+sans-serif;
+margin-top: 8px;
+font-weight: 200;
+}
+
+h5 {
+    
+    color: #5D6D7E;
+    font-family: 'Franklin Gothic Medium',
+        'Arial Narrow',
+        Arial,
+        sans-serif;
+   
+    font-weight: 300;
+}
+
+.order-here {
+    color:#455A64;
+    margin-top: 5px;
+    margin-top: 10px;
+    font-family: 'Franklin Gothic Medium',
+        'Arial Narrow',
+        Arial,
+        sans-serif;
+}
+
+h2 {
+    color: #283593;
+    margin-top: 5px;
+    margin-top: 10px;
+    font-family: 'Franklin Gothic Medium',
+        'Arial Narrow',
+        Arial,
+        sans-serif;
+}
+
+.remove-btn {
+    font-size: 0.8rem;
+    padding: 2.5px;
+    margin-right: 15px;
+    margin-left: 55px;
+    color:white;
+    background-color:#5B2C6F;
+    
+
+   
+}
+
+.btn-success {
+    font-size: 1.5rem;
+    padding: 1.5px 4px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top:5px;
+}
+
+.order-btn {
+    font-size: 0.9rem;
+    padding: 2.5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+    background-color:#5B2C6F;
+    color:white;
+}
+
+
+.card-text{
+color: #5D6D7E;
+font-family: 'Franklin Gothic Medium',
+'Arial Narrow',
+Arial,
+sans-serif;
+font-weight: 50;
+
+}
+
+.button,
+input,
+optgroup,
+select,
+textarea {
+
+font-size: small;
+
+}
+
+.total{
+color: #5D6D7E;
+font-family: 'Franklin Gothic Medium',
+'Arial Narrow',
+Arial,
+sans-serif;
+font-weight: 50;
+font-size: 2rem;
+}
+
+.remove-btn:hover {
+    color:white;
+}
+
+.card-body {
+background-color: lightgoldenrodyellow;
+}
