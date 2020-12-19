@@ -53,8 +53,8 @@ app.set("view engine", "handlebars");
 
 // Routes
 // =============================================================
-require("./app/public/routes/api-routes.js")(app);
-require("./app/public/routes/html-routes.js")(app);
+//require("./app/public/routes/api-routes.js")(app);
+//require("./app/public/routes/html-routes.js")(app);
 // Import routes and give the server access to them.
 var routes = require("./controllers/caffeinController.js");
 
