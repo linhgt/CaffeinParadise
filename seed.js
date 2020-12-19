@@ -38,6 +38,7 @@ const seedData = [
       "https://zonacooks.com/wp-content/uploads/2020/07/Banana-Mocha-Frappuccino-4-720x720.jpg",
   },
 ];
+
 db.sequelize
   .sync({ force: true })
   .then(() => {
