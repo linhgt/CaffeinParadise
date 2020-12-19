@@ -31,8 +31,11 @@ var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(express.static("public"));
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 // Requiring our models for syncing
-var db = require("./models");
+// var db = require("./models");
 
 //  We need to use sessions to keep track of our user's login status
 app.use(
@@ -46,10 +49,7 @@ app.use(passport.session());
 require("./routes/auth-routes.js")(app);
 
 // Set Handlebars.
-var exphbs = require("express-handlebars");
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+// var exphbs = require("express-handlebars");
 
 // Routes
 // =============================================================
