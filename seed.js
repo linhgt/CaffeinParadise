@@ -8,7 +8,7 @@ const seedData = [
     coffee_type: "hot",
     img_url:
       "https://www.caffesociety.co.uk/assets/recipe-images/cappuccino-small.jpg",
-    short_description:"Espresso-based coffee traditionally prepared with steamed milk foam",
+    // short_description:"Espresso-based coffee traditionally prepared with steamed milk foam",
   },
 
   {
