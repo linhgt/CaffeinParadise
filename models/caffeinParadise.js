@@ -11,6 +11,15 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     img_url: DataTypes.STRING,
+
+    // short_description: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   validate: {
+    //     len: [1, 50],
+    //   },
+    // },
+
     price_sm: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,

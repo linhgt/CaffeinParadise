@@ -5,7 +5,65 @@
 
     </div>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-4 g-2">
+        {{#each drinks}}
+        <div class="col">
+            <div class="card h-100">
+                <img src={{img_url}} class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <p class="card-text">Espresso-based coffee traditionally prepared with steamed milk foam</p>
+                    <select class="quantity form-select form-select-sm target" aria-label=".form-select-sm example">
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <select class="price form-select form-select-sm target" aria-label=".form-select-sm example">
+                        <option value="small-{{price_sm}}" selected>small - ${{price_sm}}</option>
+                        <option value="medium-{{price_md}}">medium - ${{price_md}}</option>
+                        <option value="large-{{price_lg}}">large - ${{price_lg}}</option>
+                    </select>
+                    <button class="order-btn">Order</button>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    <div>
+        <h2>Cold Coffees</h2>
+
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-4 g-2">
+        {{#each drinks}}
+        <div class="col">
+            <div class="card h-100">
+                <img src={{img_url}} class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <p class="card-text">{{short_description}}</p>
+                    <select class="quantity form-select form-select-sm target" aria-label=".form-select-sm example">
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <select class="price form-select form-select-sm target" aria-label=".form-select-sm example">
+                        <option value="small-{{price_sm}}" selected>small - ${{price_sm}}</option>
+                        <option value="medium-{{price_md}}">medium - ${{price_md}}</option>
+                        <option value="large-{{price_lg}}">large - ${{price_lg}}</option>
+                    </select>
+                    <button class="order-btn">Order</button>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+
+    {{!-- <div class="row row-cols-1 row-cols-md-3 g-6">
         {{#each drinks}}
         <div class="col">
             <div class="card h-100">
@@ -29,21 +87,23 @@
             </div>
         </div>
         {{/each}}
-        <div>
-            <h2>Cold Coffees</h2>
 
-        </div>
+    </div> --}}
 
-    </div>
+
+
     <div>
-        <h2>Your Orders Here!</h2>
+        <h2 class="order-here">Your Orders Here!</h2>
+        <div class="row">
+            <div class="col-6">
+                <ul id="cart">
 
-        <ul id="cart">
-
-        </ul>
+                </ul>
+            </div>
+        </div>
         <hr>
-        <div>Your Total - $<span id="total"></span></div>
+        <div class="total">Your Total - $<span id="total"></span></div>
 
-        <button type="submit" class="btn btn-primary place-btn">Place Order</button>
+        <button type="submit" class="btn btn-success place-btn">Place Order</button>
     </div>
 </div>
