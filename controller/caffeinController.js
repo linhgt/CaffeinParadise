@@ -3,7 +3,7 @@ var express = require("express");
 var router = express.Router();
 
 // Import the model to use its database functions.
-const db = require("./models");
+const db = require("../models");
 
 router.get("/", (req, res) => {
   db.CoffeeDrinks.findAll({ raw: true }).then(function (results) {
