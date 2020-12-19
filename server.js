@@ -6,24 +6,50 @@
 // =============================================================
 // *********************************************************************************
 
+// Requiring necessary npm packages
 var express = require("express");
+<<<<<<< HEAD
 var exphbs = require("express-handlebars");
 
 // Sets up the Express App
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 8080;
+=======
+var session = require("express-session");
+
+// Requiring passport as we've configured it
+var passport = require("./config/passport");
+
+
+// Setting up port and requiring models for syncing
+var PORT = process.env.PORT || 3000;
+var db = require("./models");
+
+
+// Creating express app and configuring middleware needed for authentication
+var app = express();
+// Parse request body as JSON
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+>>>>>>> main
 
 // Requiring our models for syncing
 var db = require("./app/models");
 
-// Routes
-// require("./app/routes/api-routes.js")(app);
-// require("./app/routes/html-routes.js")(app);
+//  We need to use sessions to keep track of our user's login status
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
-// Parse request body as JSON
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// Requiring our routes
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
+
+
+
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
