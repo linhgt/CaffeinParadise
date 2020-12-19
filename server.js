@@ -58,7 +58,7 @@ require("./routes/auth-routes.js")(app);
 // Routes
 // =============================================================
 // require("./routes/api-routes.js")(app);
-// require("./routes/html-routes.js")(app);
+require("./routes/html-routes.js")(app);
 
 // Import routes and give the server access to them.
 var routes = require("./controller/caffeinController.js");
