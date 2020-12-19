@@ -22,7 +22,7 @@ var session = require("express-session");
 var passport = require("./config/passport");
 
 // Setting up port and requiring models for syncing
-var PORT = process.env.PORT || 3000;
+// var PORT = process.env.PORT || 3000;
 var db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
@@ -42,7 +42,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Requiring our routes
-require("./routes/html-routes.js")(app);
+// require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
 // Set Handlebars.

@@ -46,9 +46,9 @@ const seedData = [
     coffee_type: "cold",
     img_url:
       "https://zonacooks.com/wp-content/uploads/2020/07/Banana-Mocha-Frappuccino-4-720x720.jpg",
-    short_description: 
   },
 ];
+
 db.sequelize
   .sync({ force: true })
   .then(() => {
