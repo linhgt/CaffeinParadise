@@ -1,25 +1,59 @@
-// *********************************************************************************
+// *****************************************************************************
 // Server.js - This file is the initial starting point for the Node/Express server.
+//
+// ******************************************************************************
+// *** Dependencies
+// =============================================================
 // *********************************************************************************
 
+// Requiring necessary npm packages
 var express = require("express");
+<<<<<<< HEAD
+var exphbs = require("express-handlebars");
 
+// Sets up the Express App
+// =============================================================
+var app = express();
+var PORT = process.env.PORT || 8080;
+=======
+var session = require("express-session");
+
+<<<<<<< HEAD
+var PORT = process.env.PORT || 8080;
+=======
+// Requiring passport as we've configured it
+var passport = require("./config/passport");
+>>>>>>> origin/Sai
+
+
+// Setting up port and requiring models for syncing
+var PORT = process.env.PORT || 3000;
 var db = require("./models");
 
-var PORT = process.env.PORT || 8080;
 
+// Creating express app and configuring middleware needed for authentication
 var app = express();
-
-// Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static("public"));
-
-// Routes
-// require("./app/routes/api-routes.js")(app);
-// require("./app/routes/html-routes.js")(app);
-
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+>>>>>>> main
+
+// Requiring our models for syncing
+var db = require("./app/models");
+
+//  We need to use sessions to keep track of our user's login status
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Requiring our routes
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
+
+
+
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
@@ -27,6 +61,10 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+// Routes
+// =============================================================
+require("./app/public/routes/api-routes.js")(app);
+require("./app/public/routes/html-routes.js")(app);
 // Import routes and give the server access to them.
 var routes = require("./controllers/caffeinController.js");
 
