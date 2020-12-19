@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // *********************************************************************************
 // api-routes.js - this file offers a set of routes for displaying and saving data to the db
 // *********************************************************************************
@@ -20,7 +19,6 @@ module.exports = function(app) {
   });
 
   
-=======
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
@@ -73,5 +71,4 @@ module.exports = function(app) {
       });
     }
   });
->>>>>>> main
 };
