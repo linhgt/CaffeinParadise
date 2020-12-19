@@ -14,7 +14,7 @@ var exphbs = require("express-handlebars");
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT || 8080;
+// var PORT = process.env.PORT || 8080;
 
 var session = require("express-session");
 
@@ -22,7 +22,7 @@ var session = require("express-session");
 var passport = require("./config/passport");
 
 // Setting up port and requiring models for syncing
-// var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;
 var db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
@@ -43,7 +43,7 @@ app.use(passport.session());
 
 // Requiring our routes
 // require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
+require("./routes/auth-routes.js")(app);
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
@@ -53,8 +53,8 @@ app.set("view engine", "handlebars");
 
 // Routes
 // =============================================================
-//require("./app/public/routes/api-routes.js")(app);
-//require("./app/public/routes/html-routes.js")(app);
+// require("./routes/api-routes.js")(app);
+// require("./routes/html-routes.js")(app);
 // Import routes and give the server access to them.
 var routes = require("./controllers/caffeinController.js");
 
