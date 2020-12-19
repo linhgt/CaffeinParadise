@@ -8,12 +8,6 @@
 // Requiring our Todo model
 //var db = require("../models");
 
-// Requiring our models and passport as we've configured it
-const db = require("../models");
-const passport = require("../config/passport");
-var coffeeDrink = require("../models/caffeinParadise.js");
-
-
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -24,49 +18,12 @@ module.exports = function(app) {
     res.render("index");
   });
 
-  app.get("/api/all", function (req, res) {
-    coffeeDrinks.findAll({}).then(function (results) {
-      res.json(results);
-    });
-  });
+  
+// Requiring our models and passport as we've configured it
+const db = require("../models");
+const passport = require("../config/passport");
 
-  app.get("/api/HotCoffeeDrinks/:name", function (req, res) {
-    coffeeDrinks
-      .findAll({
-        where: {
-          HotCoffeeDrinks: req.params.name,
-        },
-      })
-      .then(function (results) {
-        res.json(results);
-      });
-  });
-
-  // 
-  app.get("/api/HotCoffeeDrinks/:size", function (req, res) {
-    coffeeDrinks
-      .findAll({
-        where: {
-          HotCoffeeDrinks: req.params.size,
-        },
-      })
-      .then(function (results) {
-        res.json(results);
-      });
-  });
-    
-    app.get("/api/HotCoffeeDrinks/:price", function (req, res) {
-      coffeeDrinks
-        .findAll({
-          where: {
-            HotCoffeeDrinks: req.params.price,
-          },
-        })
-        .then(function (results) {
-          res.json(results);
-        });
-    });
-
+  module.exports = function (app) {
     // Using the passport.authenticate middleware with our local strategy.
     // If the user has valid login credentials, send them to the members page.
     // Otherwise the user will be sent an error
@@ -114,4 +71,5 @@ module.exports = function(app) {
         });
       }
     });
+  }
 };
