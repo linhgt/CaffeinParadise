@@ -2,24 +2,41 @@
 // Server.js - This file is the initial starting point for the Node/Express server.
 // *********************************************************************************
 
+// Requiring necessary npm packages
 var express = require("express");
+var session = require("express-session");
 
+// Requiring passport as we've configured it
+var passport = require("./config/passport");
+
+
+// Setting up port and requiring models for syncing
+var PORT = process.env.PORT || 3000;
 var db = require("./models");
 
-var PORT = process.env.PORT || 3000;
 
+// Creating express app and configuring middleware needed for authentication
 var app = express();
+// Parse request body as JSON
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
 
-// Routes
-// require("./app/routes/api-routes.js")(app);
-// require("./app/routes/html-routes.js")(app);
+//  We need to use sessions to keep track of our user's login status
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
-// Parse request body as JSON
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// Requiring our routes
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
+
+
+
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
