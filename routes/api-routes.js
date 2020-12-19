@@ -72,3 +72,4 @@ const passport = require("../config/passport");
       }
     });
   }
+};
