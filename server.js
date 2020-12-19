@@ -8,6 +8,8 @@
 
 // Requiring necessary npm packages
 var express = require("express");
+var exphbs = require("express-handlebars");
+
 
 var exphbs = require("express-handlebars");
 
@@ -17,6 +19,7 @@ var app = express();
 // var PORT = process.env.PORT || 8080;
 
 var session = require("express-session");
+
 
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
@@ -37,6 +40,7 @@ app.set("view engine", "handlebars");
 // Requiring our models for syncing
 // var db = require("./models");
 
+
 //  We need to use sessions to keep track of our user's login status
 app.use(
   session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
@@ -55,8 +59,9 @@ require("./routes/auth-routes.js")(app);
 // =============================================================
 // require("./routes/api-routes.js")(app);
 // require("./routes/html-routes.js")(app);
+
 // Import routes and give the server access to them.
-var routes = require("./controllers/caffeinController.js");
+var routes = require("./controller/caffeinController.js");
 
 app.use(routes);
 
