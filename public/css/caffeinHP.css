@@ -16,9 +16,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: wheat;
+  color: whitesmoke;
   font-family: 'Mountains of Christmas', cursive;
-  font-size: 70px;
+  font-size: 80px;
+  font-weight: bolder;
 }
 
 .hero-image button{
@@ -26,9 +27,11 @@
   margin-left:45%;
 } 
 
-h1, h3, a {
-    color:rgb(39, 192, 179);
-    font-family: 'Unna', serif;
+
+h1, h3, a, h2 {
+    color:whitesmoke;
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: bolder;
 }
 
 
@@ -131,16 +134,13 @@ h1, h3, a {
 
 .parallax {
 /* The image used */
-background-image: url("/pictures/body.jpg");
-width: 100%;
-height: 900px;
-
-/* Create the parallax scrolling effect */
-background-attachment: fixed;
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-margin-bottom: 2%;
+background-image: url("/pictures/pexels-spencer-selover-428310.jpg");
+-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: azure;
+  
 }
 
 /* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
