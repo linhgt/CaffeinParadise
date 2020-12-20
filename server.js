@@ -10,8 +10,7 @@
 var express = require("express");
 var exphbs = require("express-handlebars");
 
-
-var exphbs = require("express-handlebars");
+// var exphbs = require("express-handlebars");
 
 // Sets up the Express App
 // =============================================================
@@ -19,7 +18,6 @@ var app = express();
 // var PORT = process.env.PORT || 8080;
 
 var session = require("express-session");
-
 
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
@@ -39,7 +37,6 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 // Requiring our models for syncing
 // var db = require("./models");
-
 
 //  We need to use sessions to keep track of our user's login status
 app.use(
