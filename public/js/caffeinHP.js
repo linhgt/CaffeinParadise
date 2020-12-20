@@ -1,7 +1,7 @@
 // FOR TYPWRITING WHEN CLICK
 
 var i = 0;
-var txt = 'C R A Z Y... B E A N S'; 
+var txt = 'C A F F E I N E...PARADISE'; 
 var speed = 300; 
 
 function typeWriter() {
