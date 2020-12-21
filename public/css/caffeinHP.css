@@ -1,0 +1,206 @@
+/* ************************************************* */
+      /* FOR HEADER IMG */
+/* ************************************************* */
+
+.hero-image {
+  background-image: url("/pictures/header.jpg");
+  height: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: whitesmoke;
+  font-family: 'Mountains of Christmas', cursive;
+  font-size: 80px;
+  font-weight: bolder;
+}
+
+.hero-image button{
+  margin-top: 26%;
+  margin-left:45%;
+} 
+
+
+h1, h3, a, h2 {
+    color:whitesmoke;
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: bolder;
+}
+
+
+/* ************************************************* */
+    /* FOR FOOTER */
+/* ************************************************* */
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: whitesmoke;
+    text-align: center;
+    color: rgb(39, 192, 179);
+  }
+  
+.fixed-footer {
+    width: 100%;
+    position: fixed;
+    padding: 10px 0;
+    left: 0;
+    bottom: 0;
+  }
+
+/* ************************************************* */
+    /* FOR STICKY NAV BAR */
+/* ************************************************* */
+#navbar {
+    overflow: hidden;
+    background-color: rgb(22, 23, 24);
+    width: 100%;
+    margin-bottom: 5%;
+    z-index: 9999;
+    
+  }
+  
+#navbar, .navL, .btnNav {
+    float: left;
+    display: block;
+    color: #110f0f;
+    text-align: center;
+    font-size: 20px;
+   
+  }
+  
+#navbar, .navR {
+    float: Right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+   
+  }
+  
+#navbar a:hover {
+    background-color:rgb(39, 192, 179);
+    color: black;
+  }
+  
+#navbar, a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* Style the links inside the pill navigation menu */
+.pill-nav a {
+    display: inline-block;
+    color: rgb(235, 222, 222);
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 5px;
+  }
+  
+  /* Change the color of links on mouse-over */
+.pill-nav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+.pill-nav a.active {
+    background-color: dodgerblue;
+    color: white;
+  }
+  
+
+/* ************************************************* */ 
+    /* FOR PARALLAX */
+/* ************************************************* */
+
+.parallax {
+/* The image used */
+background-image: url("/pictures/pexels-spencer-selover-428310.jpg");
+-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: azure;
+  
+}
+
+/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+.parallax {
+  background-attachment: scroll;
+}
+}
+
+/* ************************************************* */ 
+    /* FOR SING IN, LOGIN HTML */
+/* ************************************************* */
+
+#img {
+  background: url("/pictures/header.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: azure;
+
+}
+
+#img .container {
+  margin-top: 30%;
+  margin-left: 3%;
+}
+#img input {
+  width: 55%;
+}
+
+.btnForm {
+  background-color: #f2f2f2;
+}
+
+
+.paragraph {
+  position: absolute;
+  top: 35%;
+  right: 16px;
+  font-size: 18px;
+
+}
+
+.paragraph h3 {
+  font-family: 'Mountains of Christmas', cursive;
+  text-align: center;
+}
+
+.paragraph p {
+  font-family: 'Frijole', cursive;
+  font-size: 45px;
+  text-align: center;
+}
+
+.headerF {
+position: absolute;
+top: 5%;
+width: 100%;
+text-align: center;
+font-size: 100px;
+font-family: 'Fredericka the Great', cursive;
+}

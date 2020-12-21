@@ -16,3 +16,7 @@ CREATE TABLE ColdCoffeeDrinks (
   size ENUM ("small", "medium", "large") NOT NULL,
   price DECIMAL(10, 2) NOT NULL
 );
+
+
+DROP DATABASE IF EXISTS order_db;
+CREATE DATABASE order_db;

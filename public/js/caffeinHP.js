@@ -1,6 +1,7 @@
-// for typewriting when click
+// FOR TYPWRITING WHEN CLICK
+
 var i = 0;
-var txt = 'C R A Z Y... C A F F E I N E'; 
+var txt = 'C A F F E I N E...P A R A D I S E'; 
 var speed = 300; 
 
 function typeWriter() {
@@ -12,14 +13,16 @@ function typeWriter() {
 }
 
 
-// When the user scrolls the page, execute myFunction
+
+
+// FOR STICKY NAV BAR, When the user scrolls the page, execute myFunction
+
 window.onscroll = function() {myFunction()};
 
 // Get the navbar
 var navbar = document.getElementById("navbar");
 
 var sticky = navbar.offsetTop;
-
 function myFunction() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky")

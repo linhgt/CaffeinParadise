@@ -37,17 +37,15 @@ $(document).ready(function () {
       const total = item.price * item.quan;
       subTotal += total;
       $("#cart").append(`
-        <h3>${item.size} ${item.name} x ${item.quan} = $${total.toFixed(
+        <h4>${item.size} ${item.name} x ${item.quan} = $${total.toFixed(
         2
-      )}<span>
-            <button id=${i} class="btn btn-info delete-btn">Remove</button>
-                </span></h3>
+      )}<span><button id=${i} class="btn remove-btn">Remove</button></span></h4>
         `);
     });
     $("#total").text(subTotal.toFixed(2));
   }
 
-  $(document).on("click", ".delete-btn", function () {
+  $(document).on("click", ".remove-btn", function () {
     deleteFromCart($(this).attr("id"));
   });
 
