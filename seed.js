@@ -5,7 +5,7 @@ const seedData = [
     price_sm: 3.5,
     price_md: 5.5,
     price_lg: 7,
-    coffee_type: "hot",
+    isHotDrink: true,
     img_url: "./img/black-cup-coffee.jpg",
     short_description: "ed milk foam",
   },
@@ -15,7 +15,7 @@ const seedData = [
     price_sm: 2,
     price_md: 3,
     price_lg: 4,
-    coffee_type: "hot",
+    isHotDrink: true,
     img_url: "./img/cappuccino.jpg",
     short_description:
       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -25,7 +25,7 @@ const seedData = [
     price_sm: 3.5,
     price_md: 5.5,
     price_lg: 7,
-    coffee_type: "hot",
+    isHotDrink: true,
     img_url: "./img/white-cup2-coffee.jpg",
     short_description: "Espresso-based coffee traditiosteamed milk foam",
   },
@@ -34,7 +34,7 @@ const seedData = [
     price_sm: 3.5,
     price_md: 5.5,
     price_lg: 7,
-    coffee_type: "hot",
+    isHotDrink: true,
     img_url: "./img/green-cup-coffee.jpg",
     short_description:
       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -44,7 +44,7 @@ const seedData = [
     price_sm: 3.5,
     price_md: 5.5,
     price_lg: 7,
-    coffee_type: "hot",
+    isHotDrink: true,
     img_url: "./img/green-tea-latte.jpg",
     short_description:
       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -54,7 +54,7 @@ const seedData = [
     price_sm: 3.5,
     price_md: 5.5,
     price_lg: 7,
-    coffee_type: "hot",
+    isHotDrink: true,
     img_url: "./img/yellow-cup-coffee.jpg",
     short_description:
       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -64,7 +64,7 @@ const seedData = [
     price_sm: 3.5,
     price_md: 5.5,
     price_lg: 7,
-    coffee_type: "hot",
+    isHotDrink: true,
     img_url: "./img/whithe-cup-coffee1.jpg",
     short_description:
       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -74,7 +74,7 @@ const seedData = [
     price_sm: 3.5,
     price_md: 5.5,
     price_lg: 7,
-    coffee_type: "hot",
+    isHotDrink: true,
     img_url: "./img/whithe-cup-coffee1.jpg",
     short_description:
       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -84,7 +84,7 @@ const seedData = [
     price_sm: 3.5,
     price_md: 5.5,
     price_lg: 7,
-    coffee_type: "cold",
+    isHotDrink: false,
     cold_img_url: "./img/ice-green-tea-latte.jpg",
     short_description:
       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -94,7 +94,7 @@ const seedData = [
     price_sm: 3.5,
     price_md: 5.5,
     price_lg: 7,
-    coffee_type: "cold",
+    isHotDrink: false,
     cold_img_url: "./img/ice-green-tea-latte.jpg",
     short_description:
       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -104,7 +104,7 @@ const seedData = [
     price_sm: 3.5,
     price_md: 5.5,
     price_lg: 7,
-    coffee_type: "cold",
+    isHotDrink: false,
     cold_img_url: "./img/ice-green-tea-latte.jpg",
     short_description:
       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -114,7 +114,7 @@ const seedData = [
     price_sm: 3.5,
     price_md: 5.5,
     price_lg: 7,
-    coffee_type: "cold",
+    isHotDrink: false,
     cold_img_url: "./img/ice-green-tea-latte.jpg",
     short_description:
       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -124,7 +124,7 @@ const seedData = [
     price_sm: 3.5,
     price_md: 5.5,
     price_lg: 7,
-    coffee_type: "cold",
+    isHotDrink: false,
     cold_img_url: "./img/ice-green-tea-latte.jpg",
     short_description:
       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -134,7 +134,7 @@ const seedData = [
     price_sm: 3.5,
     price_md: 5.5,
     price_lg: 7,
-    coffee_type: "cold",
+    isHotDrink: false,
     cold_img_url: "./img/ice-green-tea-latte.jpg",
     short_description:
       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -144,7 +144,7 @@ const seedData = [
     price_sm: 3.5,
     price_md: 5.5,
     price_lg: 7,
-    coffee_type: "cold",
+    isHotDrink: false,
     cold_img_url: "./img/ice-green-tea-latte.jpg",
     short_description:
       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -154,7 +154,7 @@ const seedData = [
     price_sm: 3.5,
     price_md: 5.5,
     price_lg: 7,
-    coffee_type: "cold",
+    isHotDrink: false,
     cold_img_url: "./img/ice-green-tea-latte.jpg",
     short_description:
       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -167,7 +167,7 @@ const seedData = [
 //     price_sm: 3.5,
 //     price_md: 5.5,
 //     price_lg: 7,
-//     coffee_type: "hot",
+//     isHotDrink: true,
 //     img_url: "./img/black-cup-coffee.jpg",
 //     short_description: "ed milk foam",
 //   },
@@ -177,7 +177,7 @@ const seedData = [
 //     price_sm: 2,
 //     price_md: 3,
 //     price_lg: 4,
-//     coffee_type: "hot",
+//     isHotDrink: true,
 //     img_url: "./img/cappuccino.jpg",
 //     short_description:
 //       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -187,7 +187,7 @@ const seedData = [
 //     price_sm: 3.5,
 //     price_md: 5.5,
 //     price_lg: 7,
-//     coffee_type: "hot",
+//     isHotDrink: true,
 //     img_url: "./img/white-cup2-coffee.jpg",
 //     short_description: "Espresso-based coffee traditiosteamed milk foam",
 //   },
@@ -196,7 +196,7 @@ const seedData = [
 //     price_sm: 3.5,
 //     price_md: 5.5,
 //     price_lg: 7,
-//     coffee_type: "hot",
+//     isHotDrink: true,
 //     img_url: "./img/green-cup-coffee.jpg",
 //     short_description:
 //       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -206,7 +206,7 @@ const seedData = [
 //     price_sm: 3.5,
 //     price_md: 5.5,
 //     price_lg: 7,
-//     coffee_type: "hot",
+//     isHotDrink: true,
 //     img_url: "./img/green-tea-latte.jpg",
 //     short_description:
 //       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -216,7 +216,7 @@ const seedData = [
 //     price_sm: 3.5,
 //     price_md: 5.5,
 //     price_lg: 7,
-//     coffee_type: "hot",
+//     isHotDrink: true,
 //     img_url: "./img/yellow-cup-coffee.jpg",
 //     short_description:
 //       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -226,7 +226,7 @@ const seedData = [
 //     price_sm: 3.5,
 //     price_md: 5.5,
 //     price_lg: 7,
-//     coffee_type: "hot",
+//     isHotDrink: true,
 //     img_url: "./img/whithe-cup-coffee1.jpg",
 //     short_description:
 //       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -236,9 +236,9 @@ const seedData = [
 //     price_sm: 3.5,
 //     price_md: 5.5,
 //     price_lg: 7,
-//     coffee_type: "hot",
+//     isHotDrink: true,
 //     img_url: "./img/whithe-cup-coffee1.jpg",
-//     short_description:
+//     short_description:js
 //       "Espresso-based coffee traditionally prepared with steamed milk foam",
 //   },
 // ];
@@ -249,7 +249,7 @@ const seedData = [
 //     price_sm: 3.5,
 //     price_md: 5.5,
 //     price_lg: 7,
-//     coffee_type: "cold",
+//     isHotDrink: false,
 //     cold_img_url: "./img/ice-green-tea-latte.jpg",
 //     short_description:
 //       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -259,7 +259,7 @@ const seedData = [
 //     price_sm: 3.5,
 //     price_md: 5.5,
 //     price_lg: 7,
-//     coffee_type: "cold",
+//     isHotDrink: false,
 //     cold_img_url: "./img/ice-green-tea-latte.jpg",
 //     short_description:
 //       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -269,7 +269,7 @@ const seedData = [
 //     price_sm: 3.5,
 //     price_md: 5.5,
 //     price_lg: 7,
-//     coffee_type: "cold",
+//     isHotDrink: false,
 //     cold_img_url: "./img/ice-green-tea-latte.jpg",
 //     short_description:
 //       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -279,7 +279,7 @@ const seedData = [
 //     price_sm: 3.5,
 //     price_md: 5.5,
 //     price_lg: 7,
-//     coffee_type: "cold",
+//     isHotDrink: false,
 //     cold_img_url: "./img/ice-green-tea-latte.jpg",
 //     short_description:
 //       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -289,7 +289,7 @@ const seedData = [
 //     price_sm: 3.5,
 //     price_md: 5.5,
 //     price_lg: 7,
-//     coffee_type: "cold",
+//     isHotDrink: false,
 //     cold_img_url: "./img/ice-green-tea-latte.jpg",
 //     short_description:
 //       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -299,7 +299,7 @@ const seedData = [
 //     price_sm: 3.5,
 //     price_md: 5.5,
 //     price_lg: 7,
-//     coffee_type: "cold",
+//     isHotDrink: false,
 //     cold_img_url: "./img/ice-green-tea-latte.jpg",
 //     short_description:
 //       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -309,7 +309,7 @@ const seedData = [
 //     price_sm: 3.5,
 //     price_md: 5.5,
 //     price_lg: 7,
-//     coffee_type: "cold",
+//     isHotDrink: false,
 //     cold_img_url: "./img/ice-green-tea-latte.jpg",
 //     short_description:
 //       "Espresso-based coffee traditionally prepared with steamed milk foam",
@@ -319,7 +319,7 @@ const seedData = [
 //     price_sm: 3.5,
 //     price_md: 5.5,
 //     price_lg: 7,
-//     coffee_type: "cold",
+//     isHotDrink: false,
 //     cold_img_url: "./img/ice-green-tea-latte.jpg",
 //     short_description:
 //       "Espresso-based coffee traditionally prepared with steamed milk foam",

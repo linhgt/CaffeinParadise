@@ -63,10 +63,9 @@ module.exports = (sequelize, DataTypes) => {
         max: 50,
       },
     },
-    coffee_type: {
-      type: DataTypes.ENUM,
+    isHotDrink: {
+      type: DataTypes.BOOLEAN,
       allowNull: false,
-      values: ["hot", "cold"],
     },
   });
   return CoffeeDrinks;

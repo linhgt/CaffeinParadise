@@ -1,7 +1,7 @@
 console.log("JS LOADFED!");
 
 $(document).ready(function () {
-  let total;
+  let subTotal = 0;
   const cart = localStorage.getItem("savedCart")
     ? JSON.parse(localStorage.getItem("savedCart"))
     : [];
@@ -63,8 +63,8 @@ $(document).ready(function () {
   $(".place-btn").click(function () {
     $.ajax({
       method: "POST",
-      url: "/api/CoffeeDrinks/",
-      data: { cart, total },
+      url: "/api/order",
+      data: { cart, subTotal },
     }).then((data) => {
       localStorage.removeItem("savedCart");
       window.location.reload();
