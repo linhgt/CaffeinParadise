@@ -1,7 +1,7 @@
 // FOR TYPWRITING WHEN CLICK
 
 var i = 0;
-var txt = 'C R A Z Y... B E A N S'; 
+var txt = 'C A F F E I N E...P A R A D I S E'; 
 var speed = 300; 
 
 function typeWriter() {
@@ -23,7 +23,6 @@ window.onscroll = function() {myFunction()};
 var navbar = document.getElementById("navbar");
 
 var sticky = navbar.offsetTop;
-
 function myFunction() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky")

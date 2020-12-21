@@ -5,12 +5,9 @@ var router = express.Router();
 // Import the model to use its database functions.
 const db = require("../models");
 
-router.get("/", (req, res) => {
-  db.CoffeeDrinks.findAll({ raw: true }).then(function (results) {
-    console.log(results);
-    res.render("index", { drinks: results });
-  });
-});
+// router.get("/", (req, res) => {
+ 
+
 //our routes and set up logic within those routes where required.
 router.get("/api/all", function (req, res) {
   db.CoffeeDrinks.findAll({}).then(function (results) {
