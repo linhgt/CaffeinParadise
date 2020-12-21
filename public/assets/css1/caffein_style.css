@@ -1,8 +1,19 @@
-
 body {
+    /* The image used */
+    background-image: url("/pictures/body.jpg");
+    width: 100%;
+    height: 900px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 2%;
     margin: 40px;
-   
 }
+
+
 
 .container {
     
@@ -155,6 +166,7 @@ background-color: lightgoldenrodyellow;
 .coffee-drink{
 padding: 2.11em;
 background-image: url("./img/banner_image.jpg");
+padding:0px;
 
 }
 
@@ -165,8 +177,13 @@ block-size: 50%;
 
 .banner_img {
 
-width:small;
+width:60%;
+height:70%;
 
+}
 
+#card-body{
+
+background-color: lightgoldenrodyellow;
 
 }
