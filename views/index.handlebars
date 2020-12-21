@@ -1,185 +1,203 @@
-<!DOCTYPE html>
-<html lang="en" class="formSign">
-
-  <head>
-    <meta charset="UTF-8">
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-
-     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-    <!--  bootstrap cdn -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <!-- google fonts -->
-    <link
-    href="https://fonts.googleapis.com/css2?family=Aclonica&family=Fredericka+the+Great&family=Frijole&family=Mountains+of+Christmas&family=Aclonica&family=Fredericka+the+Great&family=Frijole&family=Mountains+of+Christmas&family=Unna:ital@1&display=swap"
-    rel="stylesheet">
-
-    <!-- Add icon library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- icon cdn fonts awesome -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css2?family=Unna:ital@1&display=swap" rel="stylesheet">
-    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/caffeinHP.css"/>
-        
-    <title>Crazy Beans</title>
-</head>
-<body>
-    <div class="hero-image">
-      
-        <button onclick="typeWriter()">Click me</button>
-            <div class="hero-text">
-            <p id="demo"></p>
-                 <h2>Welcome <span class="member-name"></span></h2>
+<div class="container">
+    <div class="card mb-3" style="max-width: 1300px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img class="banner_img" src="./img/banner_img1.jpg" alt="...">
             </div>
+            <div class="col-md-8">
+                <div id="card-body" class="coffee-drink">
+                    <h1 class="card-title">Coffee Drinks</h1>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional
+                        content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
     </div>
 
-     
-    <div id="navbar" class="pill-nav">
-        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-            <a href="#" class="navR">HOME</a>
-
-            <nav class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="#" class="navR">LINK#<span
-                                class="sr-only">(current)</span></a></li>
-                    <li class="nav-item">
-                        <a href="#" class="navR">LINK#</a></li>
-                    <li class="nav-item">
-                        <a href="./checkout.handlebars" class="navR">Checkout</a></li>
-                    <li class="nav-item">
-
-                        <a href="#" class="navR">LINK#</i></a></li>
-                </ul>
-            </nav>
-        </nav>
-
-    </div><br>
-</div>
-
-<div class="parallax">
-    {{!-- <div class="container"> --}}
-        {{!-- <div class="row">
-          <div class="col-md-6 col-md-offset-3">
-            <h2>Welcome <span class="member-name"></span></h2>
-          </div>
-        </div> --}}
-      {{!-- </div> --}}
-
- 
-
-<div class="containerD">
     <div>
-        <h1>Coffee Drinks</h1>
         <h2>Hot Coffees</h2>
-
     </div>
 
     <div class="row row-cols-1 row-cols-md-4 g-2">
         {{#each drinks}}
+        {{#if isHotDrink}}
         <div class="col">
             <div class="card h-100">
-                <img src={{img_url}} class="card-img-top" alt="...">
-                <div class="card-body">
+
+                <img src={{img_url}} class="card-img-top img-size" alt="...">
+
+                <div class="card-body card-hight">
                     <h5 class="card-title">{{name}}</h5>
-                    <p class="card-text">Espresso-based coffee traditionally prepared with steamed milk foam</p>
-                    <select class="quantity form-select form-select-sm target" aria-label=".form-select-sm example">
-                        <option value="1" selected>1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                    <select class="price form-select form-select-sm target" aria-label=".form-select-sm example">
-                        <option value="small-{{price_sm}}" selected>small - ${{price_sm}}</option>
-                        <option value="medium-{{price_md}}">medium - ${{price_md}}</option>
-                        <option value="large-{{price_lg}}">large - ${{price_lg}}</option>
-                    </select>
-                    <button class="order-btn">Order</button>
+                    <p class="card-text">{{short_description}}</p>
+                </div>
+
+                <div>
+                    <div class="card-footer">
+                        <select class="quantity form-select form-select-sm target" aria-label=".form-select-sm example">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                        <select class="price form-select form-select-sm target" aria-label=".form-select-sm example">
+                            <option value="small-{{price_sm}}" selected>small - ${{price_sm}}</option>
+                            <option value="medium-{{price_md}}">medium - ${{price_md}}</option>
+                            <option value="large-{{price_lg}}">large - ${{price_lg}}</option>
+                        </select>
+                        <button class="order-btn">Order</button>
+                    </div>
                 </div>
             </div>
         </div>
+        {{/if}}
         {{/each}}
     </div>
 
     <div>
         <h2>Cold Coffees</h2>
-
     </div>
 
     <div class="row row-cols-1 row-cols-md-4 g-2">
         {{#each drinks}}
+        {{#unless isHotDrink}}
         <div class="col">
             <div class="card h-100">
-                <img src={{img_url}} class="card-img-top" alt="...">
-                <div class="card-body">
+
+                <img src={{cold_img_url}} class="card-img-top img-size" alt="...">
+
+                <div class="card-body card-hight">
                     <h5 class="card-title">{{name}}</h5>
                     <p class="card-text">{{short_description}}</p>
-                    <select class="quantity form-select form-select-sm target" aria-label=".form-select-sm example">
-                        <option value="1" selected>1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                    <select class="price form-select form-select-sm target" aria-label=".form-select-sm example">
-                        <option value="small-{{price_sm}}" selected>small - ${{price_sm}}</option>
-                        <option value="medium-{{price_md}}">medium - ${{price_md}}</option>
-                        <option value="large-{{price_lg}}">large - ${{price_lg}}</option>
-                    </select>
-                    <button class="order-btn">Order</button>
+                </div>
+
+                <div>
+                    <div class="card-footer">
+                        <select class="quantity form-select form-select-sm target" aria-label=".form-select-sm example">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                        <select class="price form-select form-select-sm target" aria-label=".form-select-sm example">
+                            <option value="small-{{price_sm}}" selected>small - ${{price_sm}}</option>
+                            <option value="medium-{{price_md}}">medium - ${{price_md}}</option>
+                            <option value="large-{{price_lg}}">large - ${{price_lg}}</option>
+                        </select>
+                        <button class="order-btn">Order</button>
+                    </div>
                 </div>
             </div>
         </div>
+        {{/unless}}
         {{/each}}
     </div>
 
 
-    {{!-- <div class="row row-cols-1 row-cols-md-3 g-6">
-        {{#each drinks}}
-        <div class="col">
-            <div class="card h-100">
-                <img src={{img_url}} class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{name}}</h5>
-                    <p class="card-text">short explianation of product</p>
-                    <select class="quantity form-select form-select-sm target" aria-label=".form-select-sm example">
-                        <option value="1" selected>1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                    <select class="price form-select form-select-sm target" aria-label=".form-select-sm example">
-                        <option value="small-{{price_sm}}" selected>small - ${{price_sm}}</option>
-                        <option value="medium-{{price_md}}">medium - ${{price_md}}</option>
-                        <option value="large-{{price_lg}}">large - ${{price_lg}}</option>
-                    </select>
-                    <button class="order-btn btn-primary">Order</button>
-                </div>
-            </div>
-        </div>
-        {{/each}}
-
-    </div> --}}
-
-
-
     <div>
-        <h2 class="order-here">Your Orders Here!</h2>
         <div class="row">
             <div class="col-6">
+                <h2 class="order-here">Your Orders Here!</h2>
                 <ul id="cart">
 
                 </ul>
+                <hr>
+                <div class="total">Your Total - $<span id="total"></span></div>
+
+                <button type="submit" class="btn btn-success place-btn">Place Order</button>
+            </div>
+            <div class="col-6">
+                <h2 class="order-here">Your Order History</h2>
+                {{#each orders}}
+                <h1>{{createdAt}}</h1>
+                {{!-- <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Collapsible Group Item #1
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                richardson ad squid. 3 wolf
+                                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                laborum eiusmod.
+                                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                                nulla assumenda
+                                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                                nesciunt sapiente ea
+                                proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                                farm-to-table, raw denim
+                                aesthetic synth nesciunt you probably haven't heard of them accusamus labore
+                                sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Collapsible Group Item #2
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                richardson ad squid. 3 wolf
+                                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                laborum eiusmod.
+                                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                                nulla assumenda
+                                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                                nesciunt sapiente ea
+                                proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                                farm-to-table, raw denim
+                                aesthetic synth nesciunt you probably haven't heard of them accusamus labore
+                                sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Collapsible Group Item #3
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                richardson ad squid. 3 wolf
+                                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                laborum eiusmod.
+                                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                                nulla assumenda
+                                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                                nesciunt sapiente ea
+                                proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                                farm-to-table, raw denim
+                                aesthetic synth nesciunt you probably haven't heard of them accusamus labore
+                                sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+                {{/each}}
             </div>
         </div>
-        <hr>
-        <div class="total">Your Total - $<span id="total"></span></div>
-
-        <button type="submit" class="btn btn-success place-btn">Place Order</button>
     </div>
 </div>
   </div>
