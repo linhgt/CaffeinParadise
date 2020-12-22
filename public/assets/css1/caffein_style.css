@@ -1,7 +1,7 @@
 body {
     /* The image used */
     background-image: url("/pictures/body.jpg");
-    width: 100%;
+    width: 90%;
     height: 900px;
 
     /* Create the parallax scrolling effect */
@@ -10,12 +10,14 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 2%;
-    margin: 40px;
+    margin-left: 40px;
+    margin-right: 10px;
 }
 
 
 
 .container {
+    margin-top:10%;
     
 
 }
@@ -28,7 +30,8 @@ font-family: 'Franklin Gothic Medium',
 'Arial Narrow',
 Arial,
 sans-serif;
-background-color: lightgoldenrodyellow;
+text-align: center;
+/* background-color: lightgoldenrodyellow; */
 
 
 }
@@ -70,7 +73,6 @@ h5 {
         'Arial Narrow',
         Arial,
         sans-serif;
-   
     font-weight: 300;
 }
 
@@ -101,9 +103,7 @@ h2 {
     margin-left: 55px;
     color:white;
     background-color:#5B2C6F;
-    
-
-   
+     
 }
 
 .btn-success {
@@ -112,6 +112,17 @@ h2 {
     margin-right: 5px;
     margin-left: 5px;
     margin-top:5px;
+}
+
+#btn-success{
+font-size: 1.5rem;
+padding: 1.5px 4px;
+margin-right: 5px;
+margin-left: 5px;
+margin-top:5px;
+background-color:green;
+color:white;
+font-family: inherit;
 }
 
 .order-btn {
@@ -163,27 +174,48 @@ font-size: 2rem;
 background-color: lightgoldenrodyellow;
 }
 
-.coffee-drink{
-padding: 2.11em;
-background-image: url("../img/banner_image.jpg");
-padding:0px;
-
-}
 
 .img-size {
 block-size: 50%;
 
 }
 
-.banner_img {
 
-width:60%;
-height:70%;
-
-}
 
 #card-body{
 
 background-color: lightgoldenrodyellow;
 
+/* margin-top:-10px; */
+margin-bottom:20px;
 }
+
+
+.navbar {
+
+background-color:#BDBDBD;
+border: 2px solid gray;
+border-radius: 5px;
+}
+
+.company_name{
+
+float:inline-end;
+
+}
+
+/* #company_info{
+    /* background-image: url("/img/"); */
+    /* width:30%;
+    border-radius: 5px;
+    margin-bottom:5px;
+    height:80px; */
+
+/* } */ 
+
+container-fluid{
+padding-top:10px;
+padding-bottom: 10px;
+
+}
+

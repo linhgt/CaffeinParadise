@@ -1,5 +1,3 @@
-console.log("JS LOADFED!");
-
 $(document).ready(function () {
   let subTotal = 0;
   const cart = localStorage.getItem("savedCart")
@@ -7,7 +5,11 @@ $(document).ready(function () {
     : [];
   renderCart();
   $(".order-btn").on("click", function (event) {
-    const name = $(this).siblings("h5").text();
+    const name = $(this)
+      .parent(".card-footer")
+      .siblings(".card-body")
+      .children("h5")
+      .text();
     const quan = $(this).siblings(".quantity").val();
     const size = $(this).siblings(".price").val().split("-")[0];
     const price = $(this).siblings(".price").val().split("-")[1];
@@ -20,16 +22,8 @@ $(document).ready(function () {
     cart.push(cartItem);
     renderCart();
     localStorage.setItem("savedCart", JSON.stringify(cart));
-
-    // $.ajax({
-    //   method: "POST",
-    //   url: "/api/CoffeeDrinks/",
-    //   data: { coffee_name, coffee_quantityAndPrice },
-    // }).then((data) => window.location.reload());
   });
 
-  // $(".delete-btn").click(function () {
-  //   const id = $(this).attr("id");
   function renderCart() {
     subTotal = 0;
     $("#cart").html("");
@@ -54,11 +48,6 @@ $(document).ready(function () {
     renderCart();
     localStorage.setItem("savedCart", JSON.stringify(cart));
   }
-  //   $.ajax({
-  //     method: "DELETE",
-  //     url: "/api/CoffeeDrinks/" + id,
-  //   }).then((data) => window.location.reload());
-  // });
 
   $(".place-btn").click(function () {
     $.ajax({
@@ -68,6 +57,36 @@ $(document).ready(function () {
     }).then((data) => {
       localStorage.removeItem("savedCart");
       window.location.reload();
+    });
+  });
+
+  $(".showDetails").click(function () {
+    const orderId = $(this).attr("data-order-id");
+    $.get("/api/orderdetail/" + orderId).then((data) => {
+      const details = JSON.parse(data.details);
+      $(".modal-dialog").html(`
+      <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Order #${
+                          data.id
+                        }</h5>
+                    </div>
+                    <div class="modal-body">
+                       ${details
+                         .map((item, i) => {
+                           const total = item.price * item.quan;
+                           return `<h4>${item.size} ${item.name} x ${
+                             item.quan
+                           } = $${total.toFixed(2)}</h4>`;
+                         })
+                         .join("")}
+                         <hr>
+                         <h4>Order Total - $${data.total}</h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+              </div>`);
     });
   });
 });
