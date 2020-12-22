@@ -5,7 +5,7 @@
 // *** Dependencies
 // =============================================================
 // *********************************************************************************
-
+require("dotenv").config();
 // Requiring necessary npm packages
 var express = require("express");
 var exphbs = require("express-handlebars");
