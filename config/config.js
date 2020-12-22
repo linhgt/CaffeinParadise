@@ -1,10 +1,10 @@
 require("dotenv").config();
 module.exports = {
     "development": {
-        "username": "gvcz0xkf9cfmsiew",
-        "password": "zqdb8derqgo7sszm",
-        "database": "a5try1pio94bbzto",
-        "host": "jhdjjtqo9w5bzq2t.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+        "username": process.env.DBUSERNAME,
+        "password": process.env.DBPASSWORD,
+        "database": process.env.DB,
+        "host": process.env.DBHOST,
         "dialect": "mysql"
     },
     "test": {
@@ -15,7 +15,10 @@ module.exports = {
         "dialect": "mysql"
     },
     "production": {
-        "use_env_variable": "JAWSDB_URL",
+        "username": process.env.DBUSERNAME,
+        "password": process.env.DBPASSWORD,
+        "database": process.env.DB,
+        "host": process.env.DBHOST,
         "dialect": "mysql"
     }
 };
