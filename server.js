@@ -12,6 +12,8 @@ var exphbs = require("express-handlebars");
 var bodyParser = require("body-parser");
 
 //var exphbs = require("express-handlebars");
+const helpers = require("./utils/hbsHelpers.js");
+// var exphbs = require("express-handlebars");
 
 // Sets up the Express App
 // =============================================================
@@ -19,7 +21,6 @@ var app = express();
 // var PORT = process.env.PORT || 8080;
 
 var session = require("express-session");
-
 
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
@@ -30,16 +31,16 @@ var db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
+const hbs = exphbs.create({ helpers });
 // Parse request body as JSON
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(express.static("public"));
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 // Requiring our models for syncing
 // var db = require("./models");
-
 
 //  We need to use sessions to keep track of our user's login status
 app.use(

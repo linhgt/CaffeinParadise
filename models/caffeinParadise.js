@@ -10,15 +10,18 @@ module.exports = (sequelize, DataTypes) => {
         len: [1, 30],
       },
     },
+
     img_url: DataTypes.STRING,
 
-    // short_description: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   validate: {
-    //     len: [1, 50],
-    //   },
-    // },
+    cold_img_url: DataTypes.STRING,
+
+    short_description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1, 50],
+      },
+    },
 
     price_sm: {
       type: DataTypes.DECIMAL(10, 2),
@@ -44,37 +47,10 @@ module.exports = (sequelize, DataTypes) => {
         max: 50,
       },
     },
-    coffee_type: {
-      type: DataTypes.ENUM,
+    isHotDrink: {
+      type: DataTypes.BOOLEAN,
       allowNull: false,
-      values: ["hot", "cold"],
     },
   });
   return CoffeeDrinks;
 };
-
-// module.exports = (sequelize, DataTypes) => {
-//   const ColdCoffeeDrinks = sequelize.define("ColdCoffeeDrinks", {
-//     name: {
-//       type: DataTypes.STRING,
-//       allowNull: false,
-//       validate: {
-//         len: [1, 30],
-//       },
-//     },
-//     size: {
-//       type: DataTypes.ENUM,
-//       allowNull: false,
-//       values: ["small", "medium", "large"],
-//     },
-//     price: {
-//       type: DataTypes.DECIMAL,
-//       allowNull: false,
-//       validate: {
-//         min: 0,
-//         max: 50,
-//       },
-//     },
-//   });
-//   return ColdCoffeeDrinks;
-// };
