@@ -15,10 +15,10 @@ module.exports = {
         "dialect": "mysql"
     },
     "production": {
-        "use_env_variable": "JAWSDB_URL",
-        "dialect": "mysql",
-        "dialectOptions":{
-            ssl: true
-        }
+        "username": "gvcz0xkf9cfmsiew",
+        "password": "zqdb8derqgo7sszm",
+        "database": "a5try1pio94bbzto",
+        "host": "jhdjjtqo9w5bzq2t.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+        "dialect": "mysql"
     }
 };
