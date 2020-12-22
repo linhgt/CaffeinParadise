@@ -9,9 +9,9 @@
 // Requiring necessary npm packages
 var express = require("express");
 var exphbs = require("express-handlebars");
+var bodyParser = require("body-parser");
 
-
-var exphbs = require("express-handlebars");
+//var exphbs = require("express-handlebars");
 
 // Sets up the Express App
 // =============================================================
