@@ -105,14 +105,38 @@
             <div class="modal-dialog">
             </div>
         </div>
-        <div class="col-6">
-            <h2 class="order-here">Your Order History</h2>
+
+        {{!-- <div class="col-1"></div> --}}
+        <div>
+            <div id="col-5">
+                <h2 class="order-history">Your Order History!</h2>
+            </div>
+            <div class="history-list">
+                {{#each orders}}
+                <ul>
+                    <h4>Order#{{id}} <button data-bs-toggle="modal" data-order-id={{id}} data-bs-target="#exampleModal"
+                            class=" btn btn-sm btn-success
+                         showDetails">Details</button> on {{format_time createdAt}}</h4>
+                </ul>
+                {{/each}}
+            </div>
+
+        </div>
+
+
+
+
+        {{!-- <div class="col-6">
+            <h2 class="order-history">Your Order History</h2>
             {{#each orders}}
-            <h4>Order#{{id}} <button data-bs-toggle="modal" data-order-id={{id}} data-bs-target="#exampleModal"
-                    id="btn-success" class=" btn btn-sm
+            <h4>Order#{{id}} <button data-bs-toggle="modal" data-order-id={{id}} data-bs-target="#exampleModal" class=" btn btn-sm btn-success
                      showDetails">Details</button> on {{format_time createdAt}}</h4>
             {{/each}}
-        </div>
+        </div> --}}
+
+
+
+
     </div>
 </div>
 </div>

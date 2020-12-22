@@ -2,14 +2,14 @@ body {
     /* The image used */
     background-image: url("/pictures/body.jpg");
     width: 90%;
-    height: 900px;
+    height: 1900px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 2%;
+    margin-bottom: -40px;
     margin-left: 40px;
     margin-right: 10px;
 }
@@ -51,12 +51,29 @@ ul {
     border-style: solid;
     border-width: 0.5px;
     border-radius: 5px;
-    text-align: center;
-    padding-inline-start: 20px;
+    /* margin-top: 0;
+    margin-bottom: 1rem; */
+    /* text-align: center;
+    padding-inline-start: 5px;  */
+    margin:0px 0px 16px;
+    padding:0px 0px 0px 40px;
+}
+
+.history-list{
+
+background-color: lightgoldenrodyellow;
+border-width: 0.5px;
+border-radius: 5px;
+text-align: center;
+padding-inline-start: 10px;
+padding-inline-end: 10px;
+padding-top:5px;
+padding-bottom:5px;
+border-style: solid;
 }
 
 h4 {
-text-align: right;
+text-align: left;
 color:#5D6D7E;
 font-family: 'Franklin Gothic Medium',
 'Arial Narrow',
@@ -64,6 +81,7 @@ Arial,
 sans-serif;
 margin-top: 8px;
 font-weight: 200;
+
 }
 
 h5 {
@@ -78,13 +96,30 @@ h5 {
 
 .order-here {
     color:#455A64;
-    margin-top: 5px;
+    
     margin-top: 10px;
     font-family: 'Franklin Gothic Medium',
         'Arial Narrow',
         Arial,
         sans-serif;
 }
+
+.order-history {
+    color: #455A64;
+    
+    margin-top: 10px;
+    font-family: 'Franklin Gothic Medium',
+        'Arial Narrow',
+        Arial,
+        sans-serif;
+}
+
+#col-5 {
+    margin:10px 0px 8px;
+  
+
+}
+
 
 h2 {
     color: #283593;
@@ -97,12 +132,13 @@ h2 {
 }
 
 .remove-btn {
-    font-size: 0.8rem;
-    padding: 2.5px;
-    margin-right: 15px;
-    margin-left: 55px;
+    font-size: 0.9rem;
+    padding:2.5px;
+    margin-right: 5px;
+    /* margin-left: 65px; */
     color:white;
     background-color:#5B2C6F;
+    text-align: right;
      
 }
 
@@ -114,15 +150,14 @@ h2 {
     margin-top:5px;
 }
 
-#btn-success{
-font-size: 1.5rem;
+.showDetails {
+font-size: 1rem;
 padding: 1.5px 4px;
 margin-right: 5px;
 margin-left: 5px;
 margin-top:5px;
-background-color:green;
-color:white;
 font-family: inherit;
+font-weight: 10;
 }
 
 .order-btn {
@@ -219,3 +254,27 @@ padding-bottom: 10px;
 
 }
 
+#cart{
+padding-inline-start: 0px;
+
+}
+
+.col-9 {
+    padding-left:25px;
+    padding-right:0px;
+    
+    
+}
+.col-2 {
+    padding-left: 0px;
+    padding-right: 10px;
+    text-align: right;
+    margin-right:0px;
+    margin-left:0px;
+}
+.orderhere_row{
+margin-top:5px;
+margin-bottom: 10px;
+
+
+}

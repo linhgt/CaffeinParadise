@@ -31,9 +31,17 @@ $(document).ready(function () {
       const total = item.price * item.quan;
       subTotal += total;
       $("#cart").append(`
-        <h4>${item.size} ${item.name} x ${item.quan} = $${total.toFixed(
-        2
-      )}<span><button id=${i} class="btn remove-btn">Remove</button></span></h4>
+      <ul>
+      <div class="row orderhere_row">
+        <div class="col-9">
+      <h4>${item.size} ${item.name} x ${item.quan} = $${total.toFixed(2)}</h4>
+      </div>
+      <div class="col-1"></div>
+       <div class="col-2">
+        <h4><button id=${i} class="btn remove-btn">Remove</button></h4>
+        </div>
+        </div>
+        <ul>
         `);
     });
     $("#total").text(subTotal.toFixed(2));
@@ -67,9 +75,9 @@ $(document).ready(function () {
       $(".modal-dialog").html(`
       <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Order #${
+                        <h4 class="modal-title" id="exampleModalLabel">Order #${
                           data.id
-                        }</h5>
+                        }</h4>
                     </div>
                     <div class="modal-body">
                        ${details
