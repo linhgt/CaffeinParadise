@@ -1,202 +1,118 @@
 <div class="container">
-    <div class="card mb-3" style="max-width: 1300px;">
-        <div class="row g-0">
-            <div class="col-md-4">
-                <img class="banner_img" src="./img/banner_img1.jpg" alt="...">
+    <nav class="navbar fixed-top">
+        <div class="container-fluid">
+            <h1 class="card-title">Coffee Drinks</h1>
+            <span id="company_info">
+                <h6 id="company_name">CaffeinParadise</h6>
+                <h6 id="company_phone">Order Phone：888-888-8888</h6>
+                <h6 id="company_email">Emal：caffeinparadise@gmail.com</h6>
+            </span>
+        </div>
+        <div>
+        </div>
+</div>
+</nav>
+
+<div>
+    <h2>Hot Coffees</h2>
+</div>
+
+<div class="row row-cols-1 row-cols-md-4 g-2">
+    {{#each drinks}}
+    {{#if isHotDrink}}
+    <div class="col">
+        <div class="card h-100">
+
+            <img src={{img_url}} class="card-img-top img-size" alt="...">
+
+            <div class="card-body card-hight">
+                <h5 class="card-title">{{name}}</h5>
+                <p class="card-text">{{short_description}}</p>
             </div>
-            <div class="col-md-8">
-                <div id="card-body" class="coffee-drink">
-                    <h1 class="card-title">Coffee Drinks</h1>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional
-                        content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
+
+            <div class="card-footer">
+                <select class="quantity form-select form-select-sm target" aria-label=".form-select-sm example">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <select class="price form-select form-select-sm target" aria-label=".form-select-sm example">
+                    <option value="small-{{price_sm}}" selected>small - ${{price_sm}}</option>
+                    <option value="medium-{{price_md}}">medium - ${{price_md}}</option>
+                    <option value="large-{{price_lg}}">large - ${{price_lg}}</option>
+                </select>
+                <button class="order-btn">Order</button>
             </div>
         </div>
     </div>
+    {{/if}}
+    {{/each}}
+</div>
 
-    <div>
-        <h2>Hot Coffees</h2>
-    </div>
+<div>
+    <h2>Cold Coffees</h2>
+</div>
 
-    <div class="row row-cols-1 row-cols-md-4 g-2">
-        {{#each drinks}}
-        {{#if isHotDrink}}
-        <div class="col">
-            <div class="card h-100">
+<div class="row row-cols-1 row-cols-md-4 g-2">
+    {{#each drinks}}
+    {{#unless isHotDrink}}
+    <div class="col">
+        <div class="card h-100">
 
-                <img src={{img_url}} class="card-img-top img-size" alt="...">
+            <img src={{cold_img_url}} class="card-img-top img-size" alt="...">
 
-                <div class="card-body card-hight">
-                    <h5 class="card-title">{{name}}</h5>
-                    <p class="card-text">{{short_description}}</p>
-                </div>
-
-                <div>
-                    <div class="card-footer">
-                        <select class="quantity form-select form-select-sm target" aria-label=".form-select-sm example">
-                            <option value="1" selected>1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                        <select class="price form-select form-select-sm target" aria-label=".form-select-sm example">
-                            <option value="small-{{price_sm}}" selected>small - ${{price_sm}}</option>
-                            <option value="medium-{{price_md}}">medium - ${{price_md}}</option>
-                            <option value="large-{{price_lg}}">large - ${{price_lg}}</option>
-                        </select>
-                        <button class="order-btn">Order</button>
-                    </div>
-                </div>
+            <div class="card-body card-hight">
+                <h5 class="card-title">{{name}}</h5>
+                <p class="card-text">{{short_description}}</p>
             </div>
-        </div>
-        {{/if}}
-        {{/each}}
-    </div>
-
-    <div>
-        <h2>Cold Coffees</h2>
-    </div>
-
-    <div class="row row-cols-1 row-cols-md-4 g-2">
-        {{#each drinks}}
-        {{#unless isHotDrink}}
-        <div class="col">
-            <div class="card h-100">
-
-                <img src={{cold_img_url}} class="card-img-top img-size" alt="...">
-
-                <div class="card-body card-hight">
-                    <h5 class="card-title">{{name}}</h5>
-                    <p class="card-text">{{short_description}}</p>
-                </div>
-
-                <div>
-                    <div class="card-footer">
-                        <select class="quantity form-select form-select-sm target" aria-label=".form-select-sm example">
-                            <option value="1" selected>1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                        <select class="price form-select form-select-sm target" aria-label=".form-select-sm example">
-                            <option value="small-{{price_sm}}" selected>small - ${{price_sm}}</option>
-                            <option value="medium-{{price_md}}">medium - ${{price_md}}</option>
-                            <option value="large-{{price_lg}}">large - ${{price_lg}}</option>
-                        </select>
-                        <button class="order-btn">Order</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{/unless}}
-        {{/each}}
-    </div>
-
-
-    <div>
-        <div class="row">
-            <div class="col-6">
-                <h2 class="order-here">Your Orders Here!</h2>
-                <ul id="cart">
-
-                </ul>
-                <hr>
-                <div class="total">Your Total - $<span id="total"></span></div>
-
-                <button type="submit" class="btn btn-success place-btn">Place Order</button>
-            </div>
-            <div class="col-6">
-                <h2 class="order-here">Your Order History</h2>
-                {{#each orders}}
-                <h1>{{createdAt}}</h1>
-                {{!-- <div class="accordion" id="accordionExample">
-                    <div class="card">
-                        <div class="card-header" id="headingOne">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse"
-                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Collapsible Group Item #1
-                                </button>
-                            </h2>
-                        </div>
-
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                            data-parent="#accordionExample">
-                            <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                richardson ad squid. 3 wolf
-                                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                                laborum eiusmod.
-                                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                                nulla assumenda
-                                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                nesciunt sapiente ea
-                                proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                                farm-to-table, raw denim
-                                aesthetic synth nesciunt you probably haven't heard of them accusamus labore
-                                sustainable VHS.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" id="headingTwo">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Collapsible Group Item #2
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                            data-parent="#accordionExample">
-                            <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                richardson ad squid. 3 wolf
-                                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                                laborum eiusmod.
-                                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                                nulla assumenda
-                                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                nesciunt sapiente ea
-                                proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                                farm-to-table, raw denim
-                                aesthetic synth nesciunt you probably haven't heard of them accusamus labore
-                                sustainable VHS.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" id="headingThree">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Collapsible Group Item #3
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                            data-parent="#accordionExample">
-                            <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                richardson ad squid. 3 wolf
-                                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                                laborum eiusmod.
-                                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                                nulla assumenda
-                                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                nesciunt sapiente ea
-                                proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                                farm-to-table, raw denim
-                                aesthetic synth nesciunt you probably haven't heard of them accusamus labore
-                                sustainable VHS.
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
-                {{/each}}
+            <div class="card-footer">
+                <select class="quantity form-select form-select-sm target" aria-label=".form-select-sm example">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <select class="price form-select form-select-sm target" aria-label=".form-select-sm example">
+                    <option value="small-{{price_sm}}" selected>small - ${{price_sm}}</option>
+                    <option value="medium-{{price_md}}">medium - ${{price_md}}</option>
+                    <option value="large-{{price_lg}}">large - ${{price_lg}}</option>
+                </select>
+                <button class="order-btn">Order</button>
             </div>
         </div>
     </div>
+    {{/unless}}
+    {{/each}}
+</div>
+
+
+<div>
+    <div class="row">
+        <div class="col-6">
+            <h2 class="order-here">Your Orders Here!</h2>
+            <ul id="cart">
+
+            </ul>
+            <hr>
+            <div class="total">Your Total - $<span id="total"></span></div>
+
+            <button type="submit" class="btn btn-success place-btn">Place Order</button>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            </div>
+        </div>
+        <div class="col-6">
+            <h2 class="order-here">Your Order History</h2>
+            {{#each orders}}
+            <h4>Order#{{id}} <button data-bs-toggle="modal" data-order-id={{id}} data-bs-target="#exampleModal"
+                    id="btn-success" class=" btn btn-sm
+                     showDetails">Details</button> on {{format_time createdAt}}</h4>
+            {{/each}}
+        </div>
+    </div>
+</div>
 </div>

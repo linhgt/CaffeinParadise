@@ -11,22 +11,6 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
 
-    // hot_name: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   validate: {
-    //     len: [1, 30],
-    //   },
-    // },
-
-    // cold_name: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   validate: {
-    //     len: [1, 30],
-    //   },
-    // },
-
     img_url: DataTypes.STRING,
 
     cold_img_url: DataTypes.STRING,

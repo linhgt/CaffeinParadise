@@ -8,8 +8,13 @@ const db = require("../models");
 router.get("/", async (req, res) => {
   const drinks = await db.CoffeeDrinks.findAll({ raw: true });
   const orders = await db.Order.findAll({ raw: true });
-  console.log(orders);
   res.render("index", { drinks, orders });
+});
+
+router.get("/api/orderdetail/:id", async (req, res) => {
+  const order = await db.Order.findByPk(req.params.id);
+  console.log(order);
+  res.json(order);
 });
 //our routes and set up logic within those routes where required.
 router.get("/api/all", function (req, res) {

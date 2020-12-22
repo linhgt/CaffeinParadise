@@ -9,7 +9,7 @@
 // Requiring necessary npm packages
 var express = require("express");
 var exphbs = require("express-handlebars");
-
+const helpers = require("./utils/hbsHelpers.js");
 // var exphbs = require("express-handlebars");
 
 // Sets up the Express App
@@ -28,12 +28,13 @@ var db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
+const hbs = exphbs.create({ helpers });
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 // Requiring our models for syncing
 // var db = require("./models");
