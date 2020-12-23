@@ -1,1 +1,36 @@
 # CaffeinParadise
+
+#Concept
+This application was created to provide coffee shops with an application that would allow for them to grow their customer base and be able to take online orders due to the current climate of safe social distancing. With this in miind, the user story we had envision was.... As a customer... I want to place an order online for my coffee.. so that I can order safely and ahead of time before pickup. 
+
+#Demo App
+The application is deployed to Heroku and can be used following this link ()
+
+#Contributors
+This project was completed in collaboration between:
+Kai Warren
+Suthunya Purciful
+Linh Nguyen
+April Yang
+
+#Technologies
+The technologies used within this project were:
+MySQL - database
+dotenv
+express/express-handlebars
+sequalize
+Heroku
+Slack
+Github
+Bootstrap
+HTML
+CSS
+
+#Installation
+If you would like to install and run this project locally, first clone the repository: git@github.com:linhgt/CaffeinParadise.git
+
+Then install the necessary dependencies (npm install)
+
+Run the Node.js server (node server.js)
+
+Finally you can access the app within your browser on the default port of 3306. (localhost:3306)
