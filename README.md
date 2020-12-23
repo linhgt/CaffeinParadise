@@ -1,19 +1,20 @@
 # CaffeinParadise
 
-#Concept
+## Concept
 This application was created to provide coffee shops with an application that would allow for them to grow their customer base and be able to take online orders due to the current climate of safe social distancing. With this in miind, the user story we had envision was.... As a customer... I want to place an order online for my coffee.. so that I can order safely and ahead of time before pickup. 
 
-#Demo App
-The application is deployed to Heroku and can be used following this link ()
+## Demo App
+The application is deployed to Heroku and can be used following this link:
+https://tranquil-bayou-91455.herokuapp.com/
 
-#Contributors
+## Contributors
 This project was completed in collaboration between:
 Kai Warren
 Suthunya Purciful
 Linh Nguyen
 April Yang
 
-#Technologies
+## Technologies
 The technologies used within this project were:
 MySQL - database
 dotenv
@@ -26,7 +27,7 @@ Bootstrap
 HTML
 CSS
 
-#Installation
+## Installation
 If you would like to install and run this project locally, first clone the repository: git@github.com:linhgt/CaffeinParadise.git
 
 Then install the necessary dependencies (npm install)
