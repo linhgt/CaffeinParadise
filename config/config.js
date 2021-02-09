@@ -1,10 +1,10 @@
 require("dotenv").config();
 module.exports = {
     "development": {
-        "username": "gvcz0xkf9cfmsiew",
-        "password": "zqdb8derqgo7sszm",
-        "database": "a5try1pio94bbzto",
-        "host": "jhdjjtqo9w5bzq2t.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+        "username": "gn9qs6lw9oqqu7nv",
+        "password": "wdkia0bf9ss3zcwc",
+        "database": "rxg8ufgj6si0ixhg",
+        "host": "lfmerukkeiac5y5w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         "dialect": "mysql"
     },
     "test": {
@@ -15,10 +15,10 @@ module.exports = {
         "dialect": "mysql"
     },
     "production": {
-        "username": "gvcz0xkf9cfmsiew",
-        "password": "zqdb8derqgo7sszm",
-        "database": "a5try1pio94bbzto",
-        "host": "jhdjjtqo9w5bzq2t.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+        "username": "gn9qs6lw9oqqu7nv",
+        "password": "wdkia0bf9ss3zcwc",
+        "database": "rxg8ufgj6si0ixhg",
+        "host": "lfmerukkeiac5y5w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         "dialect": "mysql"
     }
 };
