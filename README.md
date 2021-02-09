@@ -8,11 +8,11 @@ The application is deployed to Heroku and can be used following this link:
 https://tranquil-bayou-91455.herokuapp.com/
 
 ## Contributors
-This project was completed in collaboration between:
-Kai Warren
-Suthunya Purciful
-Linh Nguyen
-April Yang
+This Full-Stack Project was completed in collaboration between:
+- Login Page Front-end and Back-end Contributor: Suthunya Purciful 
+- Menu Page Front-end and Back-end Contributor: April Yang 
+- Merge Files, Deploy Heroku, ReadMe : Linh Nguyen
+- ReadMe and Presentation Slids: Kai Warren
 
 ## Technologies
 The technologies used within this project were:
