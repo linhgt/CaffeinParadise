@@ -5,7 +5,7 @@ This application was created to provide coffee shops with an application that wo
 
 ## Demo App
 The application is deployed to Heroku and can be used following this link:
-https://tranquil-bayou-91455.herokuapp.com/
+https://desolate-waters-54851.herokuapp.com/
 
 ## Contributors
 This Full-Stack Project was completed in collaboration between:
